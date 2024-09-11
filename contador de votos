@@ -1,0 +1,31 @@
+moradores = 0                         # START
+fulano, beltrano, cicrano = 0, 0, 0
+print('ELEIÇÃO DE SÍNDICO:')
+while(moradores < 5):                 # STOP
+  try:
+    print('MENU:')
+    print('ESCOLHA 1: Fulano de Tal')
+    print('ESCOLHA 2: Beltrano de Tal')
+    print('ESCOLHA 3: Cicrano de Tal')
+    print(f'VOTO DO {moradores + 1}° MORADOR: ')
+    voto = int(input())
+    # TRATAMENTO DE ERRO:
+    if(voto < 1 or voto > 3):
+      print('ERRO: Escolha de novo.')
+    else:
+      if(voto == 1):
+        fulano = fulano + 1
+      elif (voto == 2):
+        beltrano = beltrano + 1
+      else:
+        cicrano = cicrano + 1
+      moradores = moradores + 1           # STEP
+      print('RESULTADO DA ELEIÇÃO:')
+      pfulano = fulano / moradores * 100
+      pbeltrano = beltrano / moradores * 100
+      pcicrano = cicrano / moradores * 100
+      print(f'TOTAL DE VOTOS - FULANO  : {fulano} Votos ({pfulano: .1f}%)')
+      print(f'TOTAL DE VOTOS - BELTRANO: {beltrano} Votos ({pbeltrano: .1f}%)')
+      print(f'TOTAL DE VOTOS - CICRANO : {cicrano} Votos ({pcicrano: .1f}%)')
+  except:
+    print('ERRO: Escolha de novo.')
